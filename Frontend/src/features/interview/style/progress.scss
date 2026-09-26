@@ -1,0 +1,665 @@
+// ==========PROGRESS VARIABLES=================
+$bg-page: #0d1117;
+$bg-card: #161b22;
+$bg-panel: #1c2230;
+$border-color: #2a3348;
+$text-primary: #e6edf3;
+$text-muted: #7d8590;
+$accent: #ff2d78;
+
+// ==========PROGRESS PAGE=================
+.progress-page {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding: 1.5rem 2rem 3rem;
+    box-sizing: border-box;
+    color: $text-primary;
+    font-size: 1rem;
+}
+
+// ==========HEADER=================
+.progress-header {
+    width: 100%;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+
+    h1 {
+        margin: 0.2rem 0 0.45rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    p {
+        margin: 0;
+        color: $text-muted;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+.progress-eyebrow {
+    color: $accent;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+// ==========BACK BUTTON=================
+.progress-back-button {
+    flex-shrink: 0;
+    padding: 0.7rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    background: $bg-card;
+    color: $text-primary;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+        color: $accent;
+        border-color: rgba($accent, 0.45);
+        background: $bg-panel;
+        transform: translateY(-1px);
+    }
+}
+
+// ==========SUMMARY GRID=================
+.progress-summary-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+// ==========SUMMARY CARD=================
+.progress-summary-card {
+    min-height: 105px;
+    padding: 1.15rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    background: $bg-card;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: rgba($accent, 0.35);
+    }
+
+    span {
+        display: block;
+        margin-bottom: 0.3rem;
+        color: $text-muted;
+        font-size: 0.85rem;
+    }
+
+    strong {
+        display: block;
+        color: $text-primary;
+        font-size: 1.6rem;
+        line-height: 1.1;
+    }
+}
+
+.progress-summary-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba($accent, 0.1);
+    color: $accent;
+    font-size: 1.2rem;
+}
+
+// ==========MAIN GRID=================
+.progress-main-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+// ==========COMMON CARD=================
+.progress-card {
+    padding: 1.4rem;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    background: $bg-card;
+}
+
+// ==========CARD HEADER=================
+.progress-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+
+    h2 {
+        margin: 0.25rem 0 0;
+        color: $text-primary;
+        font-size: 1.25rem;
+        font-weight: 650;
+    }
+}
+
+.progress-card-label {
+    color: $accent;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+// ==========PERFORMANCE CONTENT=================
+.performance-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+// ==========PERFORMANCE SCORE=================
+.performance-score {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    background: $bg-panel;
+}
+
+// ==========SCORE CIRCLE=================
+.score-circle {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at center,
+            $bg-panel 62%,
+            transparent 63%
+        ),
+        conic-gradient(
+            $accent var(--score),
+            $border-color var(--score)
+        );
+}
+
+.score-circle strong {
+    position: relative;
+    z-index: 1;
+    color: $text-primary;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.score-circle span {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.3rem;
+    color: $text-muted;
+    font-size: 0.75rem;
+}
+
+.performance-info {
+    h3 {
+        margin: 0 0 0.45rem;
+        color: $accent;
+        font-size: 1.2rem;
+    }
+
+    p {
+        margin: 0;
+        max-width: 480px;
+        color: $text-muted;
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+}
+
+// ==========PROGRESS METRICS=================
+.progress-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.progress-metric {
+    width: 100%;
+}
+
+.metric-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+
+    span {
+        color: $text-muted;
+        font-size: 0.9rem;
+    }
+
+    strong {
+        color: $text-primary;
+        font-size: 0.95rem;
+    }
+}
+
+.metric-bar {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: $bg-panel;
+
+    div {
+        height: 100%;
+        border-radius: inherit;
+        background: $accent;
+        transition: width 0.4s ease;
+    }
+}
+
+// ==========ACTIVITY LIST=================
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.9rem;
+    border: 1px solid $border-color;
+    border-radius: 9px;
+    background: $bg-panel;
+
+    strong {
+        display: block;
+        margin-bottom: 0.15rem;
+        color: $text-primary;
+        font-size: 1.25rem;
+    }
+
+    span {
+        display: block;
+        color: $text-muted;
+        font-size: 0.85rem;
+    }
+}
+
+.activity-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: rgba($accent, 0.1);
+    color: $accent;
+    font-size: 1rem;
+}
+
+// ==========VIEW ALL BUTTON=================
+.view-all-button {
+    padding: 0.55rem 0.8rem;
+    border: 1px solid $border-color;
+    border-radius: 7px;
+    background: transparent;
+    color: $text-muted;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+        color: $accent;
+        border-color: rgba($accent, 0.4);
+        background: rgba($accent, 0.05);
+    }
+}
+
+// ==========RECENT LIST=================
+.recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.recent-item {
+    min-height: 70px;
+    padding: 0.8rem 0.9rem;
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr) 100px 65px;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    border-radius: 9px;
+    background: $bg-panel;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+    &:hover {
+        border-color: rgba($accent, 0.3);
+        transform: translateX(2px);
+    }
+
+    button {
+        padding: 0.5rem 0.7rem;
+        border: 1px solid $border-color;
+        border-radius: 7px;
+        background: transparent;
+        color: $text-primary;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+            color: $accent;
+            border-color: rgba($accent, 0.4);
+        }
+    }
+}
+
+.recent-number {
+    color: $accent;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.recent-details {
+    min-width: 0;
+
+    h3 {
+        margin: 0 0 0.2rem;
+        overflow: hidden;
+        color: $text-primary;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    span {
+        color: $text-muted;
+        font-size: 0.8rem;
+    }
+}
+
+.recent-score {
+    text-align: right;
+
+    strong {
+        display: block;
+        color: $accent;
+        font-size: 1rem;
+    }
+
+    span {
+        color: $text-muted;
+        font-size: 0.75rem;
+    }
+}
+
+// ==========EMPTY STATES=================
+.progress-empty,
+.recent-empty {
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px dashed $border-color;
+    border-radius: 10px;
+    background: $bg-panel;
+}
+
+.progress-empty-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba($accent, 0.1);
+    color: $accent;
+    font-size: 1.3rem;
+}
+
+.progress-empty h3 {
+    margin: 0.8rem 0 0.35rem;
+    font-size: 1.1rem;
+}
+
+.progress-empty p,
+.recent-empty p {
+    margin: 0;
+    color: $text-muted;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.progress-empty button {
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 8px;
+    background: $accent;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+// ==========CTA=================
+.progress-cta {
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border: 1px solid rgba($accent, 0.25);
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            120deg,
+            rgba($accent, 0.1),
+            rgba($accent, 0.02)
+        );
+
+    span {
+        color: $accent;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+    }
+
+    h2 {
+        margin: 0.3rem 0 0.4rem;
+        color: $text-primary;
+        font-size: 1.25rem;
+    }
+
+    p {
+        margin: 0;
+        color: $text-muted;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    button {
+        flex-shrink: 0;
+        padding: 0.8rem 1.1rem;
+        border: 1px solid rgba($accent, 0.4);
+        border-radius: 8px;
+        background: $accent;
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            background: #e6256c;
+        }
+    }
+}
+
+// ==========LOADING=================
+.progress-loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $bg-page;
+    color: $text-muted;
+    font-size: 1rem;
+}
+
+.progress-spinner {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1rem;
+    border: 3px solid $border-color;
+    border-top-color: $accent;
+    border-radius: 50%;
+    animation: progress-spin 0.8s linear infinite;
+}
+
+@keyframes progress-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// ==========TABLET=================
+@media (max-width: 1000px) {
+    .progress-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .progress-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+// ==========MOBILE=================
+@media (max-width: 750px) {
+    .progress-page {
+        padding: 1.25rem 1rem 2rem;
+    }
+
+    .progress-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+
+        h1 {
+            font-size: 1.9rem;
+        }
+    }
+
+    .progress-back-button {
+        width: 100%;
+    }
+
+    .progress-summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .performance-score {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .performance-info p {
+        max-width: none;
+    }
+
+    .recent-item {
+        grid-template-columns: 35px minmax(0, 1fr) 75px;
+    }
+
+    .recent-item button {
+        display: none;
+    }
+
+    .progress-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .progress-cta button {
+        width: 100%;
+    }
+}
+
+// ==========SMALL MOBILE=================
+@media (max-width: 480px) {
+    .progress-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-summary-card {
+        min-height: 90px;
+    }
+
+    .progress-card {
+        padding: 1rem;
+    }
+
+    .progress-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .recent-item {
+        grid-template-columns: 30px minmax(0, 1fr);
+    }
+
+    .recent-score {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .score-circle {
+        width: 105px;
+        height: 105px;
+    }
+
+    .score-circle strong {
+        font-size: 1.55rem;
+    }
+}

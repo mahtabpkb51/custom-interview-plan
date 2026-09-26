@@ -1,0 +1,441 @@
+// ==========MY PLANS VARIABLES=================
+$bg-page: #0d1117;
+$bg-card: #161b22;
+$bg-panel: #1c2230;
+$border-color: #2a3348;
+$text-primary: #e6edf3;
+$text-muted: #7d8590;
+$accent: #ff2d78;
+
+// ==========MY PLANS PAGE=================
+.my-plans-page {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding: 1.5rem 2rem 2.5rem;
+    color: $text-primary;
+    font-size: 1rem;
+}
+
+// ==========PAGE HEADER=================
+.plans-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    h1 {
+        margin: 0.4rem 0 0.6rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    p {
+        margin: 0;
+        color: $text-muted;
+        font-size: 1.05rem;
+        max-width: 620px;
+        line-height: 1.6;
+    }
+}
+
+// ==========EYEBROW=================
+.plans-eyebrow {
+    color: $accent;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+// ==========CREATE PLAN BUTTON=================
+.create-plan-btn {
+    border: 0;
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    background: $accent;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+    }
+}
+
+// ==========TOOLBAR=================
+.plans-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+// ==========SEARCH=================
+.plans-search {
+    width: min(430px, 100%);
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0 1rem;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+
+    span {
+        color: $text-muted;
+        font-size: 1.25rem;
+    }
+
+    input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: $text-primary;
+        font-size: 1rem;
+
+        &::placeholder {
+            color: $text-muted;
+        }
+    }
+}
+
+// ==========FILTERS=================
+.plans-filters {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+
+    button {
+        border: 1px solid $border-color;
+        background: $bg-card;
+        color: $text-muted;
+        padding: 0.65rem 0.95rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: 0.2s ease;
+
+        &:hover {
+            color: $text-primary;
+            border-color: #3b465e;
+        }
+
+        &.active {
+            background: rgba(255, 45, 120, 0.12);
+            color: $accent;
+            border-color: rgba(255, 45, 120, 0.35);
+        }
+    }
+}
+
+// ==========PLAN COUNT=================
+.plans-count {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: $text-muted;
+    font-size: 0.95rem;
+}
+
+.search-result-text {
+    color: #aab2bf;
+}
+
+// ==========PLANS GRID=================
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+// ==========PLAN CARD=================
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 290px;
+    padding: 1.3rem;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 14px;
+    transition: 0.25s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: #3b465e;
+    }
+}
+
+// ==========CARD TOP=================
+.plan-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+// ==========PLAN ICON=================
+.plan-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: rgba(255, 45, 120, 0.1);
+    color: $accent;
+    font-size: 1.25rem;
+}
+
+// ==========PLAN SCORE=================
+.plan-score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    strong {
+        color: $accent;
+        font-size: 1.4rem;
+    }
+
+    span {
+        color: $text-muted;
+        font-size: 0.8rem;
+    }
+}
+
+// ==========CARD CONTENT=================
+.plan-card-content {
+    flex: 1;
+    padding-top: 1.2rem;
+
+    h2 {
+        margin: 0;
+        color: $text-primary;
+        font-size: 1.15rem;
+        line-height: 1.4;
+        font-weight: 650;
+    }
+}
+
+// ==========PLAN DATE=================
+.plan-date {
+    margin: 0.45rem 0 1.2rem;
+    color: $text-muted;
+    font-size: 0.9rem;
+}
+
+// ==========PLAN META=================
+.plan-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid $border-color;
+    padding-top: 1rem;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    > div:not(:first-child) {
+        padding-left: 0.8rem;
+        border-left: 1px solid $border-color;
+    }
+}
+
+.meta-number {
+    color: $text-primary;
+    font-size: 1rem;
+    font-weight: 650;
+}
+
+.meta-label {
+    color: $text-muted;
+    font-size: 0.8rem;
+}
+
+// ==========VIEW PLAN BUTTON=================
+.view-plan-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid $border-color;
+    border-radius: 9px;
+    background: transparent;
+    color: $text-primary;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+
+    span {
+        color: $accent;
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background: rgba(255, 45, 120, 0.08);
+        border-color: rgba(255, 45, 120, 0.35);
+    }
+}
+
+// ==========EMPTY STATE=================
+.plans-empty {
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: $bg-card;
+    border: 1px dashed $border-color;
+    border-radius: 14px;
+
+    h2 {
+        margin: 1rem 0 0.4rem;
+        font-size: 1.3rem;
+    }
+
+    p {
+        margin: 0;
+        max-width: 430px;
+        color: $text-muted;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+}
+
+// ==========EMPTY ICON=================
+.empty-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: rgba(255, 45, 120, 0.1);
+    color: $accent;
+    font-size: 1.5rem;
+}
+
+// ==========EMPTY CREATE BUTTON=================
+.empty-create-btn {
+    margin-top: 1.3rem;
+    padding: 0.8rem 1.15rem;
+    border: 0;
+    border-radius: 9px;
+    background: $accent;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+// ==========LOADING=================
+.my-plans-loading {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $text-muted;
+    font-size: 1rem;
+}
+
+.plans-spinner {
+    width: 34px;
+    height: 34px;
+    border: 3px solid $border-color;
+    border-top-color: $accent;
+    border-radius: 50%;
+    animation: plansSpin 0.8s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes plansSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// ==========TABLET=================
+@media (max-width: 1050px) {
+    .my-plans-page {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .plans-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+// ==========MOBILE=================
+@media (max-width: 750px) {
+    .my-plans-page {
+        width: calc(100% - 68px);
+        margin-left: 68px;
+        padding: 5rem 1rem 2rem;
+    }
+
+    .plans-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .plans-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .plans-search {
+        width: 100%;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+// ==========SMALL MOBILE=================
+@media (max-width: 480px) {
+    .my-plans-page {
+        width: 100%;
+        margin-left: 0;
+        padding: 5rem 0.75rem 2rem;
+    }
+
+    .plans-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .plans-header p {
+        font-size: 0.95rem;
+    }
+
+    .create-plan-btn {
+        width: 100%;
+    }
+
+    .plans-filters {
+        width: 100%;
+
+        button {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+    }
+}
+
